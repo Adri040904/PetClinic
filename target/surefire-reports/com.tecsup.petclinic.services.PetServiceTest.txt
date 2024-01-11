@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.tecsup.petclinic.services.PetServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.161 s <<< FAILURE! - in com.tecsup.petclinic.services.PetServiceTest
+testDeletePet  Time elapsed: 0.137 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.tecsup.petclinic.services.PetServiceTest.testDeletePet(PetServiceTest.java:51)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.tecsup.petclinic.services.PetServiceTest.testDeletePet(PetServiceTest.java:51)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`petclinic_db`.`pets`, CONSTRAINT `pets_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `owners` (`id`))
+	at com.tecsup.petclinic.services.PetServiceTest.testDeletePet(PetServiceTest.java:51)
+
+testCreatePet  Time elapsed: 0.021 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.tecsup.petclinic.services.PetServiceTest.testCreatePet(PetServiceTest.java:32)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.tecsup.petclinic.services.PetServiceTest.testCreatePet(PetServiceTest.java:32)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`petclinic_db`.`pets`, CONSTRAINT `pets_ibfk_1` FOREIGN KEY (`owner_id`) REFERENCES `owners` (`id`))
+	at com.tecsup.petclinic.services.PetServiceTest.testCreatePet(PetServiceTest.java:32)
+
